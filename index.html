@@ -6,21 +6,11 @@
     <title>Document</title>
     <style>
       body {
-        margin: 0;background-color: #f7dcb9;
+        margin: 0;background-color: #ffe6c5;
       }
-      }
+      
 
-      .container {
-        min-width: 200px;
-        max-width: 780px;
-        margin: 0 auto;
-        padding: 45px;
-        box-sizing: border-box;
-        color: rgb(366, 41, 46);
-        font-size: 17px;
-        line-height: 1.7;
-        text-size-adjust: 100%;
-      }
+      
 
       p {
         margin-bottom: 36px;
@@ -29,7 +19,7 @@
 
       .cover {
         width: 100%;
-        background-color: #f1f1f1;
+        background-color: #fffdf7;
         text-align: center;
       }
       .logo {
@@ -60,7 +50,9 @@
         background-color: #ccc;
       }
        .wan {
+        
         display: flex;
+        height: 120px;
       }
       .baise {
         background-color: white;
@@ -87,6 +79,7 @@
       }
       .shell {
         display: grid;
+        position: relative;
         padding: 20px;
         grid-gap: 20px;
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -94,7 +87,8 @@
         grid-auto-flow: dense;
       }
       .shell > div {
-        background-color: rgb(51, 51, 51);
+        overflow: hidden;
+        background-color:rgb(180, 208, 221);
         display: flex;
         justify-content: center;
         align-items: center;
@@ -120,17 +114,86 @@
         grid-column: span 2;
         grid-row: span 2;
       }
+      .images {
+        width: 100%;
+        height:100%;object-fit: contain;
+      }
+      .hide{
+        position: absolute;
+        bottom: -70px;
+        left: 0;
+        width: 100%;
+        height:70px;
+        background-color:rgba(0,0,0,0.5);
+        transition: .3s;
+      }
+      .hide-content{padding: px;}
+      .hide-name{color: #fff;}
+      .flew-images{float: left;}
+      .hide-image{padding:22px;width: 20px;height: 20px;border-radius: 50px;
+                   }
+       .content:hover .hide { bottom: 0;}
+       
+      
+      nav {
+        background: #fff;
+        border-radius: 50px;
+        padding: 10px;
+        box-shadow: 0 25px 20px -20px rgba(0, 0, 0, 0.4);
+      }
+      nav ul li {
+        list-style: none;
+        display: inline-block;
+        padding: 13px 35px;
+        margin: 10px;
+        font-size: 18px;
+        font-weight: 500;
+        color: #777;
+        cursor: pointer;
+        position: relative;
+        z-index: 2;
+        transition: color 0.5s;
+      }
+      nav ul li::after {
+        content: "";
+        background: #f44566;
+        width: 100%;
+        height: 100%;
+        border-radius: 30px;
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+        opacity: 0;
+        transition: top 0.5s, opacity 0.5s;
+      }
+      nav ul li:hover {
+        color: #fff;
+      }
+      nav ul li:hover::after {
+        top: 50%;
+        opacity: 1;
+      }
+      .img-wrapper {
+        width: 100%;
+      }
+      .img-wrapper img {
+        width: 100%;
+        height: 100%;
+      }
     </style>
   </head>
   <body>
-    <div class="cover">
+    <div class="cover mg8 ">
       <img class="logo" alt="槭叶logo" src="qiye haed.png" />
     </div>
     <div style="height: 80px" class="cover wan1 header baise mg8">
+      <div class="img-wrapper">
       <div style="align-items: flex-start" class="wan">
         <img src="qiyename.png" alt="qiyename" />
-        <div>2024</div>
       </div>
+</div>
     <article class="container">
       <p>
         <a
@@ -141,35 +204,112 @@
         >
       </p>
        <div>
-          <p class="hezi">欢迎来到我的网站</p>
-          <p class="hezi">简介</p>
+          <p class="hezi" >欢迎来到我的网站</p>
           <p class="hezi">
             我整理了历年来我画的作品，在此梳理和分享，持续制作中，未完待续。
           </p>
-          <p class="hezi">视频</p>
-          <p class="hezi">图片</p>
-          <p class="hezi">文字/设定</p>
+          <p class="hezi">
+            是的，这个网页还很简陋，有很多想法还没有实现，持续学习html+css中
+          </p>
         </div>
+        <div><nav>
+        <ul>
+          <li>全部</li>
+          <li>视频</li>
+          <li>图画</li>
+          <li>文字/设定</li>
+        </ul>
+      </nav></div>
+
+
      <div class="shell">
-      <div class="tall"><span>1</span></div>
-      <div><span>2</span></div>
-      <div><span>3</span></div>
-      <div><span>4</span></div>
-      <div><span>5</span></div>
-      <div><span>6</span></div>
-      <div><span>7</span></div>
-      <div><span>8</span></div>
-      <div><span>9</span></div>
-      <div><span>10</span></div>
-      <div><span>11</span></div>
-      <div><span>12</span></div>
-      <div><span>13</span></div>
-      <div><span>14</span></div>
-      <div><span>15</span></div>
-      <div><span>16</span></div>
-      <div><span>17</span></div>
-      <div><span>18</span></div>
-      <div><span>19</span></div>
+     <div  class="content"><img src="20190608.jpg"  alt="" class="images">
+       <div class="hide">
+                <div class="hide-content">
+                    <h5 class="flew-images hide-name">20190608</h5>
+                        <img src="world.png" alt="" class="flew-images hide-image">
+                    
+                </div>
+               </div>
+      </div>
+      
+
+      <div  class="content"><img src="20190711.jpg"  alt="" class="images">
+       <div class="hide">
+                <div class="hide-content">
+                    <h5 class="flew-images hide-name">20190608</h5>
+                        <img src="bilibili.png" alt="" class="flew-images hide-image">
+                    
+                </div>
+               </div>
+      </div>
+      
+      <div  class="content"><img src="20190713.jpg"  alt="" class="images">
+       <div class="hide">
+                <div class="hide-content">
+                    <h5 class="flew-images hide-name">20190608</h5>
+                        <img src="bilibili.png" alt="" class="flew-images hide-image">
+                    
+                </div>
+               </div>
+      </div>
+
+      <div  class="content"><img src="20190717.jpg"  alt="" class="images">
+       <div class="hide">
+                <div class="hide-content">
+                    <h5 class="flew-images hide-name">20190608</h5>
+                        <img src="bilibili.png" alt="" class="flew-images hide-image">
+                    
+                </div>
+               </div>
+      </div>
+
+      <div  class="content"><img src="20190726.jpg"  alt="" class="images">
+       <div class="hide">
+                <div class="hide-content">
+                    <h5 class="flew-images hide-name">20190608</h5>
+                        <img src="bilibili.png" alt="" class="flew-images hide-image">
+                    
+                </div>
+               </div>
+      </div>
+
+      <div  class="content"><img src="20190608.jpg"  alt="" class="images">
+       <div class="hide">
+                <div class="hide-content">
+                    <h5 class="flew-images hide-name">20190608</h5>
+                        <img src="bilibili.png" alt="" class="flew-images hide-image">
+                    
+                </div>
+               </div>
+      </div>
+
+      <div  class="content"><img src="20190608.jpg"  alt="" class="images">
+       <div class="hide">
+                <div class="hide-content">
+                    <h5 class="flew-images hide-name">20190608</h5>
+                        <img src="bilibili.png" alt="" class="flew-images hide-image">
+                    
+                </div>
+               </div>
+      </div>
+      
+      <div  class="content"><img src="20190608.jpg"  alt="" class="images">
+       <div class="hide">
+                <div class="hide-content">
+                    <h5 class="flew-images hide-name">20190608</h5>
+                        <img src="bilibili.png" alt="" class="flew-images hide-image">
+                    
+                </div>
+               </div>
+      </div>
+
+
+
+      
+
+
+
      </div>
     </article>
 
