@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+
+    <title>重量漫画</title>
+    <link rel="stylesheet" href="../重量漫画的css.css">
+</head>
+<body>
+    <div class="whiteboxtop">
+        <button class="pushable">
+            <span class="shadow"></span>
+            <span class="edge"></span>
+            <span class="front">
+                <a href="../autumn-leaves系列.html">
+                    <回去
+                </a>
+            </span>
+          </button>
+        <div class="toppicture">
+            <h1>重量(漫画)</h1>
+        </div>
+    </div>
+
+
+
+    <div class="word">
+        <p1>page 10</p1>
+    </div>
+
+
+    
+    <div class="neiimgbox">
+           <div class="neiimgbox-img">
+           <img src="重量漫画的图在这/重量漫画草稿P9.png" alt="">
+        </div>
+    </div>
+
+
+
+
+
+    <div class="whitebox">
+        <div class="neiimgboxbottom" class="transform: rotateY(180deg);">
+            <div class="neiimgbox-img-bottom" style="transform: rotateY(180deg);">
+                <a href="重量漫画P9.html">
+                    <img src="../按键.png" alt="">
+                </a>
+            </div>
+        </div>
+
+
+
+
+
+        <div class="select-menu">
+            <div class="select">
+              <span>页面选择</span>
+              <i class="fas fa-angle-down"></i>
+            </div>
+            <div class="options-list">
+                <a href="重量漫画P1.html"><div class="option">p1</div></a>
+                <a href="重量漫画P2.html"><div class="option ">p2</div></a>
+                <a href="重量漫画P3.html"><div class="option ">p3</div></a>
+                <a href="重量漫画P4.html"><div class="option ">p4</div></a>
+                <a href="重量漫画P5.html"><div class="option ">p5</div></a>
+                <a href="重量漫画P6.html"><div class="option ">p6</div></a>
+                <a href="重量漫画P7.html"><div class="option ">p7</div></a>
+                <a href="重量漫画P8.html"><div class="option ">p8</div></a>
+                <a href="重量漫画P9.html"><div class="option ">p9</div></a>
+                <a href="重量漫画P10.html"><div class="option  hilight">p10</div></a>
+                <a href="重量漫画P11.html"><div class="option">p11</div></a>
+                
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+        <div class="neiimgboxbottom">
+            <div class="neiimgbox-img-bottom">
+                <a href="重量漫画P11.html">
+                    <img src="../按键.png" alt="">
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+    <div class="container">
+        <div class="card">
+            <p><span><a href="重量漫画P1.html">重量</a></span></p>
+            <p><span><a href="../网页系列-流明涩涩/流明涩涩漫画P1.html">流明涩涩</a></span></p>
+            <p><span><a href="">楚琪的明日</a></span></p>
+        </div>
+    </div>
+
+<div class="whitebox"></div>
+
+   
+
+
+
+
+
+
+
+    <script>
+        const select = document.querySelector(".select");
+        const options_list = document.querySelector(".options-list");
+        const options = document.querySelectorAll(".option");
+    
+        //show & hide options list
+        select.addEventListener("click", () => {
+          options_list.classList.toggle("active");
+          select.querySelector(".fa-angle-down").classList.toggle("fa-angle-up");
+        });
+    
+        //select option
+        options.forEach((option) => {
+          option.addEventListener("click", () => {
+            options.forEach((option) => {option.classList.remove('selected')});
+            select.querySelector("span").innerHTML = option.innerHTML;
+            option.classList.add("selected");
+            options_list.classList.toggle("active");
+            select.querySelector(".fa-angle-down").classList.toggle("fa-angle-up");
+          });
+        });
+      </script>
+</body>
+
+</html>

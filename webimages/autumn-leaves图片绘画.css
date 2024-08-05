@@ -1,0 +1,442 @@
+*{
+  margin:0;
+  padding:0;
+}
+
+body{
+  /* 设置body高度为100%窗口高度 */
+  height: 100vh;
+  /* 弹性盒子布局 水平垂直居中 文字居中 */
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(200deg,#a8edea,#fed6e3);
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+
+
+
+
+.hilight{
+    color: #478480;
+    color: #ca4701;
+    font-weight: bold;
+    z-index: 90;
+    box-shadow: 0 0 0 5px #ff550080;
+  }
+
+
+
+.wightbigpictureneiimgbox{
+  max-width: 100%;
+  /* 设置宽度为60%窗口宽度 */
+  margin: 5px;
+  width: 99%;
+  min-height: 50px;
+  background-color: #fff;
+  /* 盒子阴影 */
+  box-shadow:0px 5px 15px rgba(0,0,0,0.25);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  align-content: flex-start;
+  position:static ;
+  overflow: hidden;
+}
+
+
+/*白盒子里左边的时间*/
+.timeneiimgbox{
+  width: 50px;
+  margin: 10px;
+}
+
+.firsttext{
+	color: #caf1ff;
+	writing-mode: vertical-rl;
+    text-orientation: mixed;
+	font-size: 50px;
+	font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	font-synthesis-weight: 900;
+	cursor:pointer;
+	text-shadow: 2px 2px 2px rgb(6, 20, 49);
+}
+
+
+
+
+
+/*右边的盒子*/
+.lotpictureneiimgbox{
+  width: 90%;
+  margin: 10px;
+  position: relative;
+}
+
+
+
+
+
+.cantsee{
+width: 100%;
+height: 80px;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*盒子里的砖石图片*/
+.neiimgbox{
+	float: left;/* 给每个存放照片neiimgbox设置为浮动元素，让所有的图片浮动到网页的第一行*/
+	padding: 5px;
+}
+.neiimgbox-img{
+	background-color:#ebf4f8 ;
+	width: 180px;
+	padding: 5px;
+	border: 2px solid #909090;
+	neiimgbox-shadow: 0 0 5px #9f9f9f;
+	border-radius: 5px;
+	overflow: hidden;
+}
+.neiimgbox-img img {
+	width: 100%;
+	height: auto;
+	transition: 0.5s;
+}
+.neiimgbox-img img:hover{
+	transform: scale(1.3);
+	cursor:pointer;
+
+}
+
+/*盒子里的砖石图片附文字*/
+.blackword{
+	width: 100%;
+	background: #000;
+	top: -26px;
+	position: relative;
+	height: 25px;
+	float: left;
+	position: relative;
+	opacity: 0.5;
+	border-radius: 5px;
+}
+.neiimgbox a{
+	position: relative;
+	top: -48px;
+	color: #fff;
+	text-decoration: none;
+	right: -5px;
+}
+
+.neiimgbox a:hover{
+	text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*顶置按钮*/
+.backTop {
+	/* 固定定位 */
+	position: fixed;
+	bottom: 60px;
+	right: 0;
+	margin-right: 20px;
+	z-index: 999;
+	/* 回到顶部样式 */
+	width: 60px;
+	height: 60px;
+	background-color: deepskyblue;
+	/* 字体在元素中水平垂直居中 */
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	line-height: 55px;
+	text-align: center;
+	font-size: 14px;
+	color: white;
+	/* 设置圆角 */
+	border-radius: 50%;
+	/* 设置过渡效果 */
+	cursor: pointer;
+	
+	text-decoration: none;
+}
+
+html{
+	scroll-behavior: smooth;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*二级导航栏*/
+li {
+	/* 清除li元素前面的项目符号 */
+	list-style: none;
+}
+a {
+	/* 清除a元素的下划线 */
+	text-decoration: none;
+	color: #000;
+}
+
+
+.navbar {
+	position: sticky top;
+	z-index: 5;
+  max-width: 100%;
+	width: 100%;
+	height: 70px;
+	background-color: #fff;
+	/* 盒子阴影 */
+	neiimgbox-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  position: absolute;
+  top: 0px;
+  display: flex;
+  position: fixed;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: sticky top;
+}
+.navbar .nav {
+	width: 100%;
+	height: 100%;
+	/* 让元素自动水平居中 */
+	margin: 0 auto;
+}
+.navbar .nav ul {
+	/* 相对定位 */
+	position: relative;
+	/* 弹性布局 */
+	display: flex;
+	/* 让子元素平均分配宽度 */
+	justify-content: space-around;
+	width: 100%;
+	height: 100%;
+}
+.navbar .nav ul > li {
+	width: 100%;
+	height: 100%;
+}
+.navbar .nav ul > li > a {
+	/* 因为a元素是行内元素 必须将其转为行内块或者块级才能设置宽度和高度 */
+	display: block;
+	width: 100%;
+	height: 100%;
+	line-height: 70px;
+	text-align: center;
+}
+.navbar .nav ul > li ol {
+	width: 100%;
+	background-color: #fff;
+	neiimgbox-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+	/* 让盒子先沿着y轴缩放到0 也就是隐藏了 */
+	transform: scaleY(0);
+	/* 我们需要将盒子从上面滑动下来 设置一下缩放的中心点即可 设置到最上面的中间位置 */
+	transform-origin: 50% 0;
+	/* 设置过渡 */
+	transition: all 0.6s;
+}
+.navbar .nav ul > li ol li {
+	height: 40px;
+	border-bottom: 1px solid rgb(245, 245, 245);
+}
+.navbar .nav ul > li ol li a {
+	display: block;
+	width: 100%;
+	height: 100%;
+	line-height: 40px;
+	text-align: center;
+}
+.navbar .nav ul > li ol li:hover {
+	background-color: rgba(0, 0, 0, 0.03);
+}
+.navbar .nav ul > li:hover ol {
+	transform: scaleY(1);
+}
+
+
+
+/* 现在可以设置线条了 */
+.navbar .nav ul .underline {
+	/* 绝对定位 */
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 16.6%;
+	height: 6px;
+	/* 设置一下盒子的左上角和右上角的圆角 */
+	border-top-left-radius: 6px;
+	border-top-right-radius: 6px;
+	background-color: #cc3333;
+	/* 加过渡 */
+	transition: all 0.5s;
+	/* 现在有个小问题 我们一起看看 ne
+  /* 就是这个问题 这个线条有点影响鼠标移入li这个效果 */
+	/* 这个属性就可以解决这个问题 就貌似这个元素你能看见 但是鼠标是点击不到了 现在鼠标放到线条也没事了 */
+	pointer-events: none;
+}
+
+
+.navbar .nav ul .underline::before {
+	content: "";
+	/* 利用::before伪元素设置三角 */
+	position: absolute;
+	top: -10px;
+	/* calc方法自动计算数值 让盒子居中 */
+	left: calc(50% - 9px);
+	width: 18px;
+	height: 10px;
+	/* inherit可以继承父元素的属性值 */
+	background-color: inherit;
+	/* 各位小伙伴可能对着属性比较陌生 我简单说一下这句话如何生成了三角形 这个属性可以绘制图案 polygon这个属性只需要提供最少三个点 就可以将三个点连接到一起 然后绘制一个图案  两个点的坐标位置(x,y) 0 100% 这个点就是说在x轴上为0px 在y轴是100% 就是盒子的高度 x轴的方向是向右 y轴的方向是向下 那么我们设置了三个点 然后将三个点连起来刚好绘制出一个三角形 不明白的小伙伴可以在纸上画一下 画出来就理解了 */
+	clip-path: polygon(0 100%, 50% 0, 100% 100%);
+}
+
+
+.navbar .nav ul > li:nth-child(2):hover ~ .underline {
+	left: 16.6%;
+	background-color: #ff9933;
+}
+/* 重复以上操作 */
+.navbar .nav ul > li:nth-child(3):hover ~ .underline {
+	left: 33.3%;
+	background-color: #339933;
+}
+.navbar .nav ul > li:nth-child(4):hover ~ .underline {
+	left: 49.9%;
+	background-color: #0099cc;
+}
+.navbar .nav ul > li:nth-child(5):hover ~ .underline {
+	left: 66.5%;
+	background-color: #9966cc;
+}
+.navbar .nav ul > li:nth-child(6):hover ~ .underline {
+	left: 83.1%;
+	background-color: #66cc9b;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*3D导航栏*/
+.cent{
+	justify-content: center
+}
+
+ul1 {
+	/* 让li水平排列 */
+	display: flex;
+}
+ul1 li {
+	position: relative;
+	/* 取消项目编号 就是小黑点 */
+	list-style: none;
+	width: 10vh;
+	height: 50px;
+	/* 让鼠标变成小手 */
+	cursor: pointer;
+	/* 让子元素保留其3D位置 */
+	transform-style: preserve-3d;
+	transition: all 1s;
+}
+ul1 li:hover {
+	transform: rotateX(90deg);
+}
+ul1 li:hover div:first-child {
+	background-color: #51938f;
+	background-size: 5px 5px;
+	background-position: 30px 30px;
+	background-image: linear-gradient(
+		45deg,
+		#478480 25%,
+		rgba(0, 0, 0, 0) 25%,
+		rgba(0, 0, 0, 0) 75%,
+		#478480 75%,
+		#478480
+	);
+}
+ul1 li div {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	line-height: 50px;
+	text-align: center;
+	font-size: 20px;
+	font-weight: 700;
+	color: #fff;
+}
+ul1 li div:first-child {
+	background-color: #74adaa;
+	transform: translateZ(25px);
+}
+ul1 li div:last-child {
+	background-color: #51938f;
+	background-size: 5px 5px;
+	background-position: 30px 30px;
+	background-image: linear-gradient(
+		45deg,
+		#478480 25%,
+		rgba(0, 0, 0, 0) 25%,
+		rgba(0, 0, 0, 0) 75%,
+		#478480 75%,
+		#478480
+	);
+	/* 让第二个面往下移动25px 沿着X轴旋转-90度 */
+	transform: translateY(25px) rotateX(-90deg);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

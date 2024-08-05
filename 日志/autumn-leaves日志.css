@@ -1,0 +1,320 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(./img/bg.jpg);
+    background-size: cover;
+    background: linear-gradient(to right bottom,
+        rgba(255, 255, 255, .6),
+        rgba(255, 207, 117, 0.6),
+        rgba(255, 255, 255, .2));
+    backdrop-filter: blur(11px);
+  }
+
+
+  .hilight{
+    color: #478480;
+    color: #ca4701;
+    font-weight: bold;
+    z-index: 90;
+    box-shadow: 0 0 0 5px #ff550080;
+  }
+
+
+
+
+
+
+  /*左右滑动，日期*/
+  #main {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #click-section {
+    width: 15%;
+    height: 95%;
+    padding: 20px 0;
+    position: relative;
+  }
+
+  #drawerboxes {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+
+  #drawerboxes::before {
+    content: "";
+    width: 8px;
+    height: 94%;
+    position: absolute;
+    left: -10px;
+    top: 3%;
+    z-index: 120;
+  }
+
+  .drawerbox {
+    height: calc(100% / 5.5);
+    position: relative;
+    z-index: 100;
+    transform: translateX(-70%);
+    transition: transform .5s ease-in-out;
+  }
+
+  .drawerbox.active {
+    transform: translateX(0);
+  }
+
+  .drawer-btn {
+    width: 100%;
+    height: 100%;
+    font: 18px '';
+    background-color: rgb(255, 212, 175);
+    border: none;
+    transition: background-color .5s ease-in-out;
+    color: #ffffff00;
+  }
+
+  .drawer-btn.active {
+    background-image: url(./img/bg.jpg);
+    background-size: cover;
+    color: rgb(135, 97, 97);
+  }
+
+.drawer-btn.active p {
+    -webkit-text-stroke: 1px rgb(109, 16, 16);  
+  -webkit-text-fill-color : transparent;
+  color:#fff;
+  }
+
+  
+  .drawer-btn:hover {
+    cursor: pointer;
+  }
+
+  .drawer-head {
+    position: absolute;
+    color: rgb(255, 255, 255);
+    font-size: 60px;
+    top: 20px;
+    right: -80px;
+    font-weight: 400;
+    text-shadow: 2px -1px 8px rgba(250, 80, 193, 0.323);
+    transform: rotate(90deg);
+  }
+
+
+
+
+
+
+
+
+
+
+
+/*上下滑动，白色盒子内容*/
+  #slide-section {
+    position: relative;
+    height: 100%;
+    width: 85%;
+    display: flex;
+    justify-content: center;
+  }
+
+  #slide-bar {
+    position: absolute;
+    top: 10%;
+    left: 10px;
+    height: 80%;
+    width: 1px;
+    background-color: rgb(223, 223, 223);
+  }
+
+  #bar {
+    position: absolute;
+    height: calc(100% / 4);
+    width: 5px;
+    top: 0;
+    left: -1.2px;
+    background-color: rgb(26, 132, 207);
+    transition: transform .5s ease-in-out;
+  }
+
+  #card-section {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    border: 10px;
+    border-color: white;
+  }
+
+  .card {
+      position:relative;
+      margin: 10px;
+      background-color: rgba(255, 255, 255, 0.751);
+      border-radius: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    width: 100%;
+    padding: 10% 3%;
+    color: white;
+    font-size: 30px;
+    transition: transform .5s ease-in-out;
+  }
+
+  .card-small-title {
+    font-size: 30px;
+    font-weight: 600;
+    color: rgb(13, 73, 237);
+  }
+
+  .card-title {
+    font-size: 50px;
+    font-weight: 700;
+    color: rgb(9, 32, 103);
+  }
+
+  .card-content {
+    font-size: 24px;
+    font-weight: 400;
+    color: rgb(0, 0, 2);
+    margin-bottom: 60px;
+  }
+
+  .card-img {
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+  }
+
+  .card-img img {
+    width: 100%;
+  }
+
+
+
+
+
+
+
+
+/*放更新头像的*/
+.title-picture{
+    background-color: rgb(255, 255, 255);
+    border-radius:30px;
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+    overflow: hidden;
+    box-shadow: 2px 2px 5px 2px black;
+
+  }
+
+ .title-header{
+    width:100%;
+    height:100%;
+    transform: scale(1.5);
+ }
+
+
+
+
+
+ /*原理未明，3d旋转导航栏*/
+ult {
+	/* 让li水平排列 */
+	display: flex;
+  justify-content: center;
+}
+
+ult li {
+  display: inline-flex;
+	position: relative;
+	/* 取消项目编号 就是小黑点 */
+	list-style: none;
+	width: 10vh;
+	height: 50px;
+	/* 让鼠标变成小手 */
+	cursor: pointer;
+	/* 让子元素保留其3D位置 */
+	transform-style: preserve-3d;
+	transition: all 1s;
+}
+ult li:hover {
+	transform: rotateX(90deg);
+}
+ult li:hover div:first-child {
+	background-color: #63aba6;
+	background-size: 5px 5px;
+	background-position: 30px 30px;
+	background-image: linear-gradient(
+		45deg,
+		#6cbdb8 25%,
+		rgba(0, 0, 0, 0) 25%,
+		rgba(0, 0, 0, 0) 75%,
+		#478480 75%,
+		#478480
+	);
+}
+ult li div {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	line-height: 50px;
+	text-align: center;
+	font-size: 20px;
+	font-weight: 700;
+	color: #fff;
+}
+ult li div:first-child {
+	background-color: #74adaa;
+	transform: translateZ(25px);
+}
+ult li div:last-child {
+	background-color: #51938f;
+	background-size: 5px 5px;
+	background-position: 30px 30px;
+	background-image: linear-gradient(
+		45deg,
+		#478480 25%,
+		rgba(0, 0, 0, 0) 25%,
+		rgba(0, 0, 0, 0) 75%,
+		#478480 75%,
+		#478480
+	);
+	/* 让第二个面往下移动25px 沿着X轴旋转-90度 */
+	transform: translateY(25px) rotateX(-90deg);
+}
+
+.containertop{
+    width: 100%;
+    height: 70px;
+    line-height: 70px;
+    top: 0px;
+    z-index: 5;
+    background-color: rgb(112, 147, 158);
+    display: flex;
+    position: fixed;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: sticky top;
+    box-shadow: 0 10px 50px #fbffe7;
+  }

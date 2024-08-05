@@ -1,0 +1,436 @@
+*{
+    /* 初始化 */
+    margin: 0;
+    border: 0;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+    background: linear-gradient(#103255,#de7c75);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  
+.whitebox{
+    color: #000000;
+    width: 90%;
+    min-height: 50px;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.word p1{
+  font-size: 20px;
+  color: #563b00;
+  -webkit-text-stroke: 1px rgb(255, 193, 47);
+}
+
+
+.whiteboxtop{
+    width: 100%;
+    min-height: 100px;
+    margin: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+
+
+
+
+
+.neiimgbox{
+    margin: 10px;
+    width: 90%;
+    max-width: 1000px;
+}
+.neiimgbox-img{
+	background-color:#ebf4f8 ;
+	width: 90%;
+	padding: 5px;
+	border: 2px solid #909090;
+	border-radius: 5px;
+	overflow: hidden;
+}
+.neiimgbox-img img {
+	width: 100%;
+	height: auto;
+}
+
+
+
+
+
+
+
+
+/*跳转左右按钮*/
+.neiimgboxbottom{
+  margin: 10px;
+  width: 10%;
+}
+
+.neiimgbox-img-bottom{
+position: relative;
+overflow: hidden;
+}
+.neiimgbox-img-bottom img {
+width: 100%;
+height: auto;
+}
+
+.options-list a {
+  text-decoration: none;
+
+}
+.options-list a:link {
+  color: #000000; /* 默认链接颜色 */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*选页面下拉按钮*/
+.select-menu{
+  z-index: 10;
+  width: 60%;
+  cursor: pointer;
+  position: relative;
+}
+
+.select{
+  background-color: #a20c0c;
+  padding: 20px;
+  color: #fff;
+  font-weight: 500;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.options-list{
+  position: absolute;
+  width: 100%;
+  background-color: #f9f9f9;
+  border-radius: 6px;
+  margin-top: 4px;
+  padding: 0 20px;
+  max-height: 180px;
+  overflow-y: auto;
+  transition: .4s linear .2s;
+  height: 0;
+}
+
+.option{
+  padding: 8px 0;
+  font-weight: 500;
+  font-size: 14px;
+  transition: .3s ease-in-out;
+}
+
+.option:hover,
+.option.selected{
+  color: #00a8ff;
+}
+
+.options-list::-webkit-scrollbar{
+  width: 4px;
+  background-color: #eee;
+}
+
+.options-list::-webkit-scrollbar-thumb{
+  background-color: #00a8ff;
+}
+
+.options-list.active{
+  height: 180px;
+}
+
+.hilight{
+  color: #ff0000;
+  font-size: 18px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*头部文字特效*/
+.toppicture{
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.toppicture h1 {
+    position: relative;
+    /* 1rem=16px */
+    font-size: 3rem;
+    color: #000000;
+}
+
+.toppicture h1:after {
+    content: '重量(漫画)';
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* 透明色 */
+    color: transparent;
+    background-image: linear-gradient(to right, #c23616, #192a56, #00d2d3, yellow, 
+    #6d214f, #2e86de,#d1cf37, #e84118);
+    /* 背景绘制区域，值为text时，给文字设置镂空效果，前提必须是文字颜色为透明色 */
+    background-clip: text;
+    /* 谷歌浏览器私有属性 */
+    -webkit-background-clip: text;
+    /* 使用裁切方法创建元素的可显示区域 circle表示裁切一个圆形 100px表示圆的直径 0%和50%表示圆心位置 直径和圆心两组值中间用at隔开*/
+    clip-path: circle(100px at 0% 50%);
+    -webkit-clip-path: circle(100px at 0% 50%);
+    animation: move 5s infinite;
+}
+
+@keyframes move {
+    0% {
+        clip-path: circle(100px at 0% 50%);
+        -webkit-clip-path: circle(100px at 0% 50%);
+    }
+
+    50% {
+        clip-path: circle(100px at 100% 50%);
+        -webkit-clip-path: circle(100px at 100% 50%);
+    }
+
+    100% {
+        clip-path: circle(100px at 0% 50%);
+        -webkit-clip-path: circle(100px at 0% 50%);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*回去按钮*/
+.pushable {
+    width: 18%;
+    max-height:80px;
+    max-width: 200px;
+    min-width: 70px;
+    margin: 10px;
+    position: relative;
+    height: 60px;
+    background: transparent;
+    padding: 0px;
+    border: none;
+    cursor: pointer;
+    outline-offset: 4px;
+    outline-color: deeppink;
+    transition: filter 250ms;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+  
+  .shadow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: hsl(25, 25%, 69%);
+    border-radius: 8px;
+    filter: blur(2px);
+    will-change: transform;
+    transform: translateY(2px);
+    transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
+  }
+  
+  .edge {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 8px;
+    background: linear-gradient(
+      to right,
+      hsl(0, 72%, 42%) 0%,
+      hsl(343, 39%, 49%) 8%,
+      hsl(0, 39%, 39%) 92%,
+      hsl(338, 39%, 29%) 100%
+    );
+  }
+  
+  .front {
+    display: block;
+    position: relative;
+    border-radius: 8px;
+    background: hsl(36, 100%, 63%);
+    padding: 16px 5px;
+    color: white;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 1rem;
+    transform: translateY(-4px);
+    transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
+  }
+  
+  .pushable:hover {
+    filter: brightness(110%);
+  }
+  
+  .pushable:hover .front {
+    transform: translateY(-6px);
+    transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
+  }
+  
+  .pushable:active .front {
+    transform: translateY(-2px);
+    transition: transform 34ms;
+  }
+  
+  .pushable:hover .shadow {
+    transform: translateY(4px);
+    transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
+  }
+  
+  .pushable:active .shadow {
+    transform: translateY(1px);
+    transition: transform 34ms;
+  }
+  
+  .pushable:focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  .pushable a{
+    color: white;
+    text-decoration: none; 
+  }
+
+
+.pushable a:hover {
+  color: rgb(186, 6, 0); /* 当鼠标悬停在链接上时的颜色 */
+}
+  
+
+
+
+
+
+
+
+
+
+
+
+
+/*看图片跳转各系列*/
+.container {
+  height: 200px;
+  width: 90%;
+  border-radius: 1em;
+  overflow: hidden;
+  background-color: #000000;
+  box-shadow: 0 10px 20px #000000;
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  width: 210px;
+  height: 90%;
+  border-radius: 4px;
+  background: #212121;
+  display: flex;
+  gap: 5px;
+  padding: .4em;
+}
+
+.card p {
+  height: 100%;
+  flex: 1;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all .5s;
+  background: linear-gradient(170deg, rgba(58, 56, 56, 0.623) 0%, rgb(31, 31, 31) 100%);
+  border: 2px solid #ff735a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card p:hover {
+  flex: 4;
+}
+
+.card p span {
+  min-width: 14em;
+  padding: .5em;
+  text-align: center;
+  transform: rotate(-90deg);
+  transition: all .5s;
+  text-transform: uppercase;
+  color: #ffd856;
+  letter-spacing: .1em;
+}
+
+.card p:hover span {
+  transform: rotate(0);
+}
+
+
+
+.container a{
+  text-decoration: none; /*去除下划线*/
+  color: #ffd856;
+}
+
+.container a:link {
+  color: #ffd856; /* 默认链接颜色 */
+}
+
+.container a:hover {
+  color: #ff0000; /* 当鼠标悬停在链接上时的颜色 */
+}

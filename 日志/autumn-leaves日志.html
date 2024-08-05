@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>autumn-leaves的日志</title>
+  <link rel="stylesheet" href="autumn-leaves日志.css">
+</head>
+<body>
+    <div class="containertop">
+        <ult>
+            <li>
+                <div class="link"><a href="..\主页\autumn-leaves的主页面.html"style="color:white;">主页</a></div>
+                <div class="link"><a href="..\主页\autumn-leaves的主页面.html"style="color:white;">主页</a></div>
+            </li>
+            <li>
+                <div class="link"><a href="../webimages/autumn-leaves图片绘画.html"style="color:white;">绘画</a></div>
+                <div class="link"><a href="../webimages/autumn-leaves图片绘画.html"style="color:white;">绘画</a></div>
+            </li>
+            <li>
+                <div class="link"><a href="autumn-leaves日志.html"style="color:white;"  class="hilight">日志</a></div>
+                <div class="link"><a href="autumn-leaves日志.html"style="color:white;">日志</a></div>
+            </li>
+            <li>
+                <div class="link"><a href="..\视频/autumn-leaves视频.html"style="color:white;">视频</a></div>
+                <div class="link"><a href="..\视频/autumn-leaves视频.html"style="color:white;">视频</a></div>
+            </li>
+            <li>
+                <div class="link"><a href="../系列/autumn-leaves系列.html"style="color:white;">系列</a></div>
+                <div class="link"><a href="../系列/autumn-leaves系列.html"style="color:white;">系列</a></div>
+            </li>
+        </ult>
+     </div>
+
+
+
+
+
+
+
+
+
+
+
+  <div id="main">
+            <div id="click-section">
+              <div id="drawerboxes">
+                     <div class="drawerbox active">
+                       <button class="drawer-btn active" onclick="slideTo(1)"><p>第二版网站正式发布</p><span
+                           class="drawer-head">24.8.4</span></button>
+                     </div>
+                     <div class="drawerbox">
+                       <button class="drawer-btn" onclick="slideTo(2)"><p>最初第一版</p><span
+                           class="drawer-head">24.3.11</span></button>
+                     </div>
+                     <div class="drawerbox">
+                       <button class="drawer-btn" onclick="slideTo(3)"><p>测试一下</p><spa
+                        n class="drawer-head">test...</span></button>
+                     </div>
+                     <div class="drawerbox">
+                       <button class="drawer-btn" onclick="slideTo(4)"><p>测试一下</p><spa
+                        n class="drawer-head">text...</span></button>
+                     </div>
+              </div>
+            </div>
+
+
+
+
+
+<div id="slide-section">
+                  <div id="slide-bar">
+                    <div id="bar"></div>
+                  </div>
+  <div id="card-section">
+        <div id="card1" class="card">
+              <div class="title-picture">
+                <img src="槭叶头像草稿.png" alt="" class="title-header">
+              </div>
+          <div class="card-title">第二版网站建成了！</div>
+          <div class="card-small-title">2024.8.4</div>
+          <div class="card-content"><p>通过1周的努力，总算把这个网站建好了！
+            非常感谢B站的各位UP主，各位的教学视频真的帮了我非常多！</p>
+            <p>在学习的期间受益颇多，我还挺喜欢编程的。
+                深刻领悟到了只要程序能跑，就不要动屎山的笑话。</p></div>
+          <div class="card-img">
+          </div>
+        </div>
+        <div id="card2" class="card">
+            <div class="title-picture">
+                <img src="..\webimages\qiye haed.png" alt="" class="title-header">
+              </div>
+          <div class="card-title">年初做的第一版网站</div>
+          <div class="card-small-title">2024.3.11</div>
+          <div class="card-content"><p>因为挺想展示作品的，但在各大网站统一发太麻烦了，于是便有了制作网站的想法。</p>
+            <p>感谢up主康文昌，正是他的教程帮我在一天内实现了梦想！</p>
+            <p><a href="https://www.bilibili.com/video/BV17S4y1P7qH/?spm_id_from=333.999.0.0&vd_source=543c3463d9126f1f535dab05f0247e73">up主康文昌</a></p>
+            <p><a href="webimages/autumn-leaves.html">我的第一版网站</a></p></div>
+        </div>
+        <div id="card3" class="card">
+          <div class="card-title">这是测试1</div>
+          <div class="card-small-title">8.4</div>
+          <div class="card-content">以后可以当做放日志的地方 </div>
+          <div class="card-img">
+          </div>
+        </div>
+        <div id="card4" class="card">
+            <div class="card-title">这是测试2</div>
+          <div class="card-small-title">8.4</div>
+          <div class="card-content">这是空的格子，待使用......</div>
+          <div class="card-img">
+          </div>
+        </div>
+  </div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script>
+    // 定义变量 
+    let chosenSlideNumber = 1; // 当前选择的幻灯片编号 
+    let offset = 0; // 幻灯片偏移量 
+    let barOffset = 0; // 导航条偏移量 
+    let intervalID; // 定时器 ID 
+    // 启动幻灯片轮播 
+    startSlide();
+    // 获取所有抽屉按钮，并为每个按钮添加点击事件监听器 
+    const drawerBtns = Array.from(document.querySelectorAll(".drawer-btn"));
+    drawerBtns.forEach(btn => {
+      btn.addEventListener("click", () => {
+        clearInterval(intervalID); // 清除定时器 
+        startSlide(); // 重新启动幻灯片轮播 
+      })
+    })
+    // 获取幻灯片区域 
+    const slideSection = document.querySelector("#slide-section");
+    // 鼠标移入幻灯片区域时清除定时器 
+    slideSection.addEventListener("mouseenter", () => {
+      clearInterval(intervalID);
+    })
+    // 鼠标移出幻灯片区域时重新启动幻灯片轮播 
+    slideSection.addEventListener("mouseleave", () => {
+      startSlide();
+    })
+    // 切换到指定编号的幻灯片 
+    function slideTo(slideNumber) {
+      drawerboxToggle(slideNumber); // 切换抽屉面板状态 
+      drawerbtnToggle(slideNumber); // 切换抽屉按钮状态 
+      // 更新偏移量 
+      let previousSlideNumber = chosenSlideNumber;
+      chosenSlideNumber = slideNumber;
+      offset += (chosenSlideNumber - previousSlideNumber) * (-100); // 计算幻灯片偏移量 
+      barOffset += (chosenSlideNumber - previousSlideNumber) * (100); // 计算导航条偏移量 
+      barSlide(barOffset); // 移动导航条 
+      // 获取所有幻灯片，为每个幻灯片设置偏移量 
+      const slides = document.querySelectorAll(".card");
+      Array.from(slides).forEach(slide => {
+        slide.style.transform = `translateY(${offset}%)`;
+      })
+    }
+    // 切换抽屉面板状态 
+    function drawerboxToggle(drawerboxNumber) {
+      let prevDrawerboxNumber = chosenSlideNumber;
+      const drawerboxes = document.querySelectorAll(".drawerbox");
+      drawerboxes[prevDrawerboxNumber - 1].classList.toggle("active"); // 切换前一个抽屉面板的状态 
+      drawerboxes[drawerboxNumber - 1].classList.toggle("active"); // 切换当前抽屉面板的状态 
+    }
+    // 切换抽屉按钮状态 
+    function drawerbtnToggle(drawerBtnNumber) {
+      let prevDrawerBtnNumber = chosenSlideNumber;
+      const drawerBtns = document.querySelectorAll(".drawer-btn");
+      drawerBtns[prevDrawerBtnNumber - 1].classList.toggle("active"); // 切换前一个抽屉按钮的状态 
+      drawerBtns[drawerBtnNumber - 1].classList.toggle("active"); // 切换当前抽屉按钮的状态 
+    }
+    // 移动导航条 
+    function barSlide(barOffset) {
+      const bar = document.querySelector("#bar");
+      bar.style.transform = `translateY(${barOffset}%)`;
+    }
+    // 启动幻灯片轮播 
+    function startSlide() {
+      intervalID = setInterval(() => {
+        slideTo(chosenSlideNumber % 4 + 1); // 每次切换到下一个幻灯片 
+      }, 3000); // 每隔 3 秒自动切换幻灯片 
+    }
+
+
+
+  </script>
+</body>
+
+</html>
